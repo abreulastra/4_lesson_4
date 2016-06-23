@@ -6,7 +6,6 @@ Created on Wed Jun 22 13:17:43 2016
 """
 
 import csv
-import pandas as pd
 import sqlite3 as lite
 
 
@@ -28,7 +27,6 @@ with open('API_NY.GDP.MKTP.CD_DS2_en_csv_v2.csv','rU') as inputFile:
         with con:            
             cur.execute('INSERT INTO gdp (country, _1999, _2000, _2001, _2002, _2003, _2004, _2005, _2006, _2007, _2008, _2009, _2010) VALUES ("' + line[0] + '","' + '","'.join(line[44:-5]) + '");')
     con.commit
-    
-           
+          
 con.close
     

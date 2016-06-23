@@ -19,10 +19,8 @@ df = pd.read_sql_query('SELECT * FROM school_years INNER JOIN gdp USING (country
 df = df.replace('',np.nan, regex=True)
 df = df.dropna()
 
-gdp_99 = [float(i) for i in df['_1999']]
-df['log_gdp_99'] = map (lambda x: math.log(x), gdp_99)
-
-df['_1999'] = gdp_99
+df['_1999'] = [float(i) for i in df['_1999']]
+df['log_gdp_99'] = map (lambda x: math.log(x), df['_1999'])
 
 df.corr()
 

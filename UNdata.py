@@ -70,7 +70,6 @@ women = [int(i) for i in women]
 
 # Create a variable of the value of the columns
 columns = {'year': year,'country': country, 'total': total, 'men': men, 'women': women}
-
 # Create a dataframe from the columns variable
 df = pd.DataFrame(columns)
 
